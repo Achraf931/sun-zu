@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*   MAIN   */
+*, *::before, *::after, *:focus  {
+	padding: 0;
+	line-height: 100%;
+	line-break: normal;
+	margin: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+	-ms-overflow-style: none;
+	-webkit-overflow-scrolling: touch; /* Touch scroll by default */
+	font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+	background: #F2F5FC;
+}
+
+::-webkit-scrollbar {
+	display: none!important;
+	opacity: 0;
+	visibility: hidden;
+}
+
+#container-params {
+	background: #2D53DA;
+}
+
+#add-graph {
+	background: #7290f3;
+}
+
+#add-graph:hover {
+	background: #5c7eec;
+}
