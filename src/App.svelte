@@ -5,7 +5,6 @@
 	import moment from 'moment'
 
 	let dataLines = []
-	let selected = 'bitcoin';
 
 	async function addGraph() {
 		let coin = JSON.parse(document.getElementById('coins').value),
@@ -21,14 +20,14 @@
 
 		for (let i = 0; i < coins.prices.length; i++) {
 			data.push(coins.prices[i][1]);
-			labels.push(moment(coins.prices[i][0]).locale('fr').format("D ddd"));
+			labels.push(moment(coins.prices[i][0]).format("D ddd"));
 		}
 
 		let dataLine = {
 			labels: labels.filter(unique),
 			datasets: [
 				{
-					label: coin.name + ' - ' + currency,
+					label: `${coin.name} - ${currency} - ${moment(coins.prices[0][0]).format("D ddd")} to now`,
 					fill: true,
 					lineTension: 0.3,
 					backgroundColor: "rgba(45, 83, 218, .3)",
@@ -82,12 +81,12 @@
 		<div class="flex flex-col ml-5 py-4 pr-4">
 			<label class="mb-3 text-white font-bold" for="date">Date</label>
 			<select class="bg-white rounded-md shadow-sm p-4 cursor-pointer" name="date" id="date">
-				<option selected value="1">1 jour</option>
-				<option value="5">5 jours</option>
-				<option value="30">30 jours</option>
-				<option value="180">6 mois</option>
-				<option value="360">1 an</option>
-				<option value="1800">5 an</option>
+				<option selected value="1">1 day</option>
+				<option value="5">5 days</option>
+				<option value="30">30 days</option>
+				<option value="180">6 months</option>
+				<option value="360">1 year</option>
+				<option value="1800">5 years</option>
 			</select>
 		</div>
 		<div on:click={addGraph} id="add-graph" class="button cursor-pointer text-white flex transition-all duration-100 ease-in-out items-center h-full w-16 justify-center rounded-tr-xl rounded-br-xl" style="height: 113px;">
