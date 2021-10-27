@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte'
-	import {MDBContainer, MDBRow, MDBCol} from "mdbsvelte";
+	import { MDBCol } from "mdbsvelte";
 	import Line from "svelte-chartjs/src/Line.svelte"
 	import moment from 'moment'
 
